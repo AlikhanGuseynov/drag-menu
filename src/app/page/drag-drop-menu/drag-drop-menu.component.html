@@ -1,0 +1,35 @@
+<div class="page">
+  <div class="menu">
+
+    <ul class="menu-list"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListData]="menu"
+        [cdkDropListConnectedTo]="dls">
+
+      <div *ngFor="let item of menu" cdkDrag  [cdkDragData]="item.subMenu">
+        <li  class="menu-item flex align-items-center justify-content-between" >
+          <p class="menu-item-text">{{item.text}}</p>
+          <button class="close-open-btn" (click)="openCloseSubMenu(subMenuList)">
+            <img *ngIf="item.subMenu && !checkClass(subMenuList)" src="assets/images/menu-minus.svg" alt="">
+            <img *ngIf="item.subMenu && checkClass(subMenuList)" src="assets/images/menu-plus.svg" alt="">
+          </button>
+        </li>
+        <ul class="sub-menu-list"
+            #subMenuList
+            cdkDropList
+            [cdkDropListData]="item.subMenu"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListConnectedTo]="dls"
+        >
+          <ng-container *ngFor="let subMenuItem of item.subMenu">
+            <li class="sub-menu-item menu-item flex align-items-center justify-content-between" cdkDrag>
+              <p class="menu-item-text">{{subMenuItem.text}}</p>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+
+    </ul>
+  </div>
+</div>
