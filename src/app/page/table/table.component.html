@@ -1,0 +1,69 @@
+<div class="page">
+
+  <table class="table">
+    <thead class="thead">
+    <tr>
+      <td>
+        <p class="thead-text" [ngClass]="{'sort': true}">
+          Ad, soyad
+        </p>
+      </td>
+      <td>
+        <p class="thead-text sort">
+          E-poçt
+        </p>
+      </td>
+      <td>
+        <p class="thead-text sort">
+          Aktiv səhifələr
+        </p>
+      </td>
+      <td>
+        <p class="thead-text">
+          Aktion
+        </p>
+      </td>
+    </tr>
+    </thead>
+    <tbody class="tbody">
+    <ng-container *ngFor="let item of table; let i = index">
+      <tr>
+        <td>
+          <p class="tbody-text">{{item.name}}</p>
+        </td>
+        <td>
+          <app-table-row-hover [img]="img" [data]="hoverData"></app-table-row-hover>
+          <p class="tbody-text">{{item.mail}}</p>
+        </td>
+        <td>
+          <div class="flex">
+            <ng-container *ngFor="let subItem of item.activePageList">
+              <div class="tag">{{subItem}}</div>
+            </ng-container>
+          </div>
+        </td>
+        <td>
+          <div class="flex align-items-center">
+
+            <app-toggle [(state)]="state"></app-toggle>
+            <button class="action-btn edit-btn">
+              <img src="assets/images/edit.svg" alt="">
+            </button>
+            <button class="action-btn delete-btn">
+              <img src="assets/images/delete.svg" alt="">
+            </button>
+            <button class="action-btn link-btn">
+              <img src="assets/images/link.svg" alt="">
+            </button>
+            <button class="action-btn eye-btn">
+              <img src="assets/images/eye.svg" alt="">
+            </button>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+
+</div>
+

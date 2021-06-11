@@ -1,0 +1,46 @@
+.hover-container {
+  position: absolute;
+  z-index: 100;
+  border-radius: 6px;
+  background-color: #464064;
+  padding: 13px 17px;
+  bottom: 50px;
+}
+
+.hover-container:after {
+  position: absolute;
+  content: url("../../../assets/images/tringle-for-hover.svg");
+  bottom: -14px;
+  left: calc(50% - 11px);
+}
+
+.data-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.data-item + .data-item {
+  margin-top: 5px;
+}
+
+.data-label {
+  font-size: 14px;
+  color: #b6b6db;
+}
+
+.data-value {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.img-container {
+  width: 73px;
+  height: 73px;
+  border-radius: 6px;
+  margin-right: 21px;
+  background: #fff;
+
+  img {
+    width: 100%;
+  }
+}

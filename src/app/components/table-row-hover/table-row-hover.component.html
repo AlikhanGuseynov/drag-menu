@@ -1,0 +1,13 @@
+<div class="hover-container flex align-items-center">
+  <div *ngIf="img" class="img-container flex align-items-center justify-content-center">
+    <img [src]="img" alt="">
+  </div>
+  <ul class="data">
+    <ng-container *ngFor="let item of data | keyvalue">
+      <li class="data-item">
+        <p class="data-label">{{item.key}}</p>
+        <p class="data-value">{{item.value}}</p>
+      </li>
+    </ng-container>
+  </ul>
+</div>

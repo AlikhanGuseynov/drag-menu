@@ -1,0 +1,113 @@
+table, td, tr {
+  border: none;
+  border-collapse: collapse;
+}
+
+.page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.thead-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #464064;
+  position: relative;
+}
+
+.table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+tr td:first-child {
+  padding: 15px 30px;
+}
+
+tr td:last-child {
+  padding: 15px 30px 15px 0;
+}
+
+.thead tr {
+  background-color: #fff !important;
+}
+
+tr:nth-child(odd) {
+  background-color: #f9fbff;
+}
+
+tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.tbody-text {
+  font-size: 14px;
+  color: #464064;
+}
+
+.tag {
+  font-size: 14px;
+  color: #8c8cb6;
+  padding: 2px 9px;
+  border-radius: 6px;
+  background-color: #eaf1ff;
+}
+
+.tag + .tag {
+  margin-left: 10px;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.action-btn + .action-btn {
+  margin-left: 15px;
+}
+
+.edit-btn:hover {
+  background-color: #f5f9ff;
+}
+
+.delete-btn:hover {
+  background-color: #ffdbde;
+}
+
+.link-btn:hover {
+  background-color: rgba(220, 232, 255, 0.6);
+}
+
+.eye-btn:hover {
+  background-color: #dbf5fd;
+}
+
+app-table-row-hover {
+  display: none;
+}
+
+tr:hover app-table-row-hover {
+  //display: block;
+}
+
+tr {
+  position: relative;
+  cursor: pointer;
+}
+
+.sort:after {
+  position: absolute;
+  content: url("../../../assets/images/sort.svg");
+  left: -16px;
+  top: 2px;
+}
